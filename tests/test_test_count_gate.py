@@ -73,6 +73,23 @@ class ReleaseScannerTests(unittest.TestCase):
         self.assertNotEqual(result.returncode, 0)
         self.assertIn("hash", (result.stdout + result.stderr).casefold())
 
+    def test_modified_workflow_fails_manifest_hash_check(self):
+        workflow = self.root / ".github" / "workflows" / "windows-simulation.yml"
+        workflow.write_text(workflow.read_text(encoding="utf-8") + "\n# changed\n", encoding="utf-8")
+        result = self.run_script("scripts/verify_manifest.py")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("workflow", (result.stdout + result.stderr).casefold())
+
+    def test_line_ending_conversion_fails_raw_hash_check(self):
+        workflow = self.root / ".github" / "workflows" / "windows-simulation.yml"
+        original = workflow.read_bytes()
+        self.assertIn(b"\n", original)
+        self.assertNotIn(b"\r\n", original)
+        workflow.write_bytes(original.replace(b"\n", b"\r\n"))
+        result = self.run_script("scripts/verify_manifest.py")
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("hash", (result.stdout + result.stderr).casefold())
+
     def test_sensitive_filename_is_rejected(self):
         (self.root / "unexpected.sqlite3").write_bytes(b"not a database")
         result = self.run_script("scripts/security_scan.py")

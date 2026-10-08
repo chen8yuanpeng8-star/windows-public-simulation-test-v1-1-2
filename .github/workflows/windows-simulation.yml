@@ -19,6 +19,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Restore exact Git blob bytes
+        shell: pwsh
+        run: |
+          git config --local core.autocrlf false
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          git checkout-index --force --all
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Configure Python 3.11
         uses: actions/setup-python@v5
         with:

@@ -27,7 +27,7 @@
     "any_skip": "FAIL_FOR_FULL_PASS"
   },
   "local_validation": {
-    "scanner_and_gate_regressions": "PASS: 14 targeted tests",
+    "scanner_and_gate_regressions": "PASS: 16 targeted tests",
     "full_windows_suite": "PENDING_GITHUB_ACTIONS",
     "powershell_source_parse": "PASS",
     "powershell_child_process_execution": "PENDING_GITHUB_ACTIONS",
@@ -49,7 +49,7 @@
   "files": [
     {
       "path": ".github/workflows/windows-simulation.yml",
-      "sha256": "8b4e1d7970767a73b7d36f31e7a4a4b7b83d7f3e68e3f1dd39d845d7ee392a69"
+      "sha256": "b19814c1a3faf6cf4954d65150fcf4318f06ede10815d74175ab75de65656eb8"
     },
     {
       "path": "PUBLIC_RELEASE_AUDIT.json",
@@ -67,7 +67,7 @@
     },
     {
       "path": "TEST_MANIFEST.json",
-      "sha256": "0c420451925d1ca2a2400405a02ec4f5961f4136f97526b9f98e52598dd5738d"
+      "sha256": "9d921f7c16f3ee7d1498f3750538d1d7d90995e1219ed140a735694214105975"
     },
     {
       "path": "powershell/SimulatedService.ps1",
@@ -87,7 +87,7 @@
     },
     {
       "path": "scripts/build_audit.py",
-      "sha256": "710f1a4d83aa3ca62cb0e85e02dece2a2333febc41523ac514d360381c019d85"
+      "sha256": "9c611c2d8f331603b44b9d975be4e7d1e5c6fae69e328555e2ed45cef1d5bd71"
     },
     {
       "path": "scripts/build_zip.py",
@@ -163,7 +163,7 @@
     },
     {
       "path": "tests/test_test_count_gate.py",
-      "sha256": "43f58066c0a2d5ef98364b135bee03a6a43b9e214c16da5d16acc85081f5cf84"
+      "sha256": "5f71d26dea1dba8b6e7a07ef9ba77837aac5cd7db48dc167ae1507ce6dc2b91b"
     }
   ],
   "unverified_until_actions_run": [

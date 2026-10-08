@@ -107,7 +107,7 @@ def main():
             "any_skip": "FAIL_FOR_FULL_PASS",
         },
         "local_validation": {
-            "scanner_and_gate_regressions": "PASS: 14 targeted tests",
+            "scanner_and_gate_regressions": "PASS: 16 targeted tests",
             "full_windows_suite": "PENDING_GITHUB_ACTIONS",
             "powershell_source_parse": "PASS",
             "powershell_child_process_execution": "PENDING_GITHUB_ACTIONS",
