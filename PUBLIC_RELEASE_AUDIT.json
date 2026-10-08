@@ -1,7 +1,8 @@
 {
   "audit_schema": "PUBLIC_RELEASE_AUDIT_V1",
-  "review_status": "PREPARED_WAITING_USER_PUBLICATION_CONFIRMATION",
-  "public_release": false,
+  "review_status": "REVIEWED_FOR_AUTHORIZED_V1_1_3_PUBLIC_RELEASE",
+  "public_release": true,
+  "package_version": "1.1.3",
   "repository_history_included": false,
   "source_origin": "generic simulation content; review found no identifiable project-specific source; authoring provenance is not independently verified from the archive",
   "security_scope": {
@@ -26,11 +27,11 @@
     "any_skip": "FAIL_FOR_FULL_PASS"
   },
   "local_validation": {
-    "python_gate_negative_tests": "PASS: 5 tests",
-    "python_suite": "17 collected, 16 passed, 1 skipped, runner exit 1 because FastAPI is absent in the review host; not FULL_PASS",
+    "scanner_and_gate_regressions": "PASS: 14 targeted tests",
+    "full_windows_suite": "PENDING_GITHUB_ACTIONS",
     "powershell_source_parse": "PASS",
-    "powershell_child_process_execution": "VM_PENDING",
-    "github_actions_run": "NOT_RUN"
+    "powershell_child_process_execution": "PENDING_GITHUB_ACTIONS",
+    "github_actions_run": "PENDING_AUTHORIZED_V1_1_3_RUN"
   },
   "workflow": {
     "runner": "windows-2022",
@@ -66,7 +67,7 @@
     },
     {
       "path": "TEST_MANIFEST.json",
-      "sha256": "1923096184363d45c3bcd3984dca3797a7ec194ca4d920a1219f38abd884b6c8"
+      "sha256": "0c420451925d1ca2a2400405a02ec4f5961f4136f97526b9f98e52598dd5738d"
     },
     {
       "path": "powershell/SimulatedService.ps1",
@@ -86,7 +87,7 @@
     },
     {
       "path": "scripts/build_audit.py",
-      "sha256": "1a0a07c2bb7e29256eaaed5c17bc042bbf04e89751e01e068271d2e03a51b29c"
+      "sha256": "710f1a4d83aa3ca62cb0e85e02dece2a2333febc41523ac514d360381c019d85"
     },
     {
       "path": "scripts/build_zip.py",
@@ -102,11 +103,11 @@
     },
     {
       "path": "scripts/security_scan.py",
-      "sha256": "c49571d929dd1bf202f06c9b09637bab86e37c36187f24d9a1772b3efa8611a6"
+      "sha256": "8324bff42a9eec71bb3b34b69743485ed7ad7d6478885c523cb09877d61b69cb"
     },
     {
       "path": "scripts/verify_manifest.py",
-      "sha256": "8016b6bdead2b03ab83e5ccd69f9e4c1a507e36e4688467f410014c52aa3604d"
+      "sha256": "1ffb8c2c8ba0004c90d08dd8578ff7fc8a70959415c8299f77652e0bafe13b1b"
     },
     {
       "path": "scripts/verify_zip.py",
@@ -162,7 +163,7 @@
     },
     {
       "path": "tests/test_test_count_gate.py",
-      "sha256": "be32e2424340de047aa3c2c82c8971bac708305ff56b81ed199df0c9fb4174c3"
+      "sha256": "43f58066c0a2d5ef98364b135bee03a6a43b9e214c16da5d16acc85081f5cf84"
     }
   ],
   "unverified_until_actions_run": [

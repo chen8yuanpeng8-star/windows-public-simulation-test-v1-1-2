@@ -58,7 +58,7 @@ def main():
     payload = sorted(ALLOWLIST)
     manifest = {
         "bundle_id": "public-windows-simulation-tests",
-        "version": "1.1.2",
+        "version": "1.1.3",
         "release_type": "pure_simulation_only",
         "python": "3.11.x",
         "runner": "windows-2022 standard hosted runner",
@@ -80,8 +80,9 @@ def main():
             inventory.append({"path": name, "sha256": digest(ROOT / name)})
     audit = {
         "audit_schema": "PUBLIC_RELEASE_AUDIT_V1",
-        "review_status": "PREPARED_WAITING_USER_PUBLICATION_CONFIRMATION",
-        "public_release": False,
+        "review_status": "REVIEWED_FOR_AUTHORIZED_V1_1_3_PUBLIC_RELEASE",
+        "public_release": True,
+        "package_version": "1.1.3",
         "repository_history_included": False,
         "source_origin": "generic simulation content; review found no identifiable project-specific source; authoring provenance is not independently verified from the archive",
         "security_scope": {
@@ -106,11 +107,11 @@ def main():
             "any_skip": "FAIL_FOR_FULL_PASS",
         },
         "local_validation": {
-            "python_gate_negative_tests": "PASS: 5 tests",
-            "python_suite": "17 collected, 16 passed, 1 skipped, runner exit 1 because FastAPI is absent in the review host; not FULL_PASS",
+            "scanner_and_gate_regressions": "PASS: 14 targeted tests",
+            "full_windows_suite": "PENDING_GITHUB_ACTIONS",
             "powershell_source_parse": "PASS",
-            "powershell_child_process_execution": "VM_PENDING",
-            "github_actions_run": "NOT_RUN",
+            "powershell_child_process_execution": "PENDING_GITHUB_ACTIONS",
+            "github_actions_run": "PENDING_AUTHORIZED_V1_1_3_RUN",
         },
         "workflow": {
             "runner": "windows-2022",

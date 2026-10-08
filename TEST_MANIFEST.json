@@ -1,6 +1,6 @@
 {
   "bundle_id": "public-windows-simulation-tests",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "release_type": "pure_simulation_only",
   "python": "3.11.x",
   "runner": "windows-2022 standard hosted runner",
@@ -32,7 +32,7 @@
     },
     {
       "path": "scripts/build_audit.py",
-      "sha256": "1a0a07c2bb7e29256eaaed5c17bc042bbf04e89751e01e068271d2e03a51b29c"
+      "sha256": "710f1a4d83aa3ca62cb0e85e02dece2a2333febc41523ac514d360381c019d85"
     },
     {
       "path": "scripts/build_zip.py",
@@ -48,11 +48,11 @@
     },
     {
       "path": "scripts/security_scan.py",
-      "sha256": "c49571d929dd1bf202f06c9b09637bab86e37c36187f24d9a1772b3efa8611a6"
+      "sha256": "8324bff42a9eec71bb3b34b69743485ed7ad7d6478885c523cb09877d61b69cb"
     },
     {
       "path": "scripts/verify_manifest.py",
-      "sha256": "8016b6bdead2b03ab83e5ccd69f9e4c1a507e36e4688467f410014c52aa3604d"
+      "sha256": "1ffb8c2c8ba0004c90d08dd8578ff7fc8a70959415c8299f77652e0bafe13b1b"
     },
     {
       "path": "scripts/verify_zip.py",
@@ -108,7 +108,7 @@
     },
     {
       "path": "tests/test_test_count_gate.py",
-      "sha256": "be32e2424340de047aa3c2c82c8971bac708305ff56b81ed199df0c9fb4174c3"
+      "sha256": "43f58066c0a2d5ef98364b135bee03a6a43b9e214c16da5d16acc85081f5cf84"
     }
   ],
   "metadata_files": [
