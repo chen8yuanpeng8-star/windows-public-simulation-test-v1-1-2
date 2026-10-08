@@ -46,6 +46,11 @@ class ReleaseScannerTests(unittest.TestCase):
         self.assertEqual(manifest.returncode, 0, manifest.stdout + manifest.stderr)
         self.assertEqual(security.returncode, 0, security.stdout + security.stderr)
 
+    def test_release_metadata_uses_canonical_lf_bytes(self):
+        for name in ("PUBLIC_RELEASE_AUDIT.json", "SHA256SUMS.txt", "TEST_MANIFEST.json"):
+            content = (self.root / name).read_bytes()
+            self.assertNotIn(b"\r\n", content, name)
+
     def test_unlisted_github_workflow_is_not_ignored(self):
         extra = self.root / ".github" / "workflows" / "unlisted.yml"
         extra.write_text("name: unlisted", encoding="utf-8")

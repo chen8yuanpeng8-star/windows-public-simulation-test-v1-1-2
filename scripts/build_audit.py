@@ -58,7 +58,7 @@ def main():
     payload = sorted(ALLOWLIST)
     manifest = {
         "bundle_id": "public-windows-simulation-tests",
-        "version": "1.1.3",
+        "version": "1.1.4",
         "release_type": "pure_simulation_only",
         "python": "3.11.x",
         "runner": "windows-2022 standard hosted runner",
@@ -70,7 +70,7 @@ def main():
         "minimum_tests": {"python": 17, "powershell_assertions": 5},
         "skip_policy": "Any skip prevents FULL_PASS",
     }
-    (ROOT / "TEST_MANIFEST.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "TEST_MANIFEST.json").write_bytes((json.dumps(manifest, indent=2) + "\n").encode("utf-8"))
 
     inventory = []
     for name in sorted(expected):
@@ -80,9 +80,9 @@ def main():
             inventory.append({"path": name, "sha256": digest(ROOT / name)})
     audit = {
         "audit_schema": "PUBLIC_RELEASE_AUDIT_V1",
-        "review_status": "REVIEWED_FOR_AUTHORIZED_V1_1_3_PUBLIC_RELEASE",
+        "review_status": "REVIEWED_FOR_AUTHORIZED_V1_1_4_PUBLIC_RELEASE",
         "public_release": True,
-        "package_version": "1.1.3",
+        "package_version": "1.1.4",
         "repository_history_included": False,
         "source_origin": "generic simulation content; review found no identifiable project-specific source; authoring provenance is not independently verified from the archive",
         "security_scope": {
@@ -107,7 +107,7 @@ def main():
             "any_skip": "FAIL_FOR_FULL_PASS",
         },
         "local_validation": {
-            "scanner_and_gate_regressions": "PASS: 16 targeted tests",
+            "scanner_and_gate_regressions": "PASS: 17 targeted tests",
             "full_windows_suite": "PENDING_GITHUB_ACTIONS",
             "powershell_source_parse": "PASS",
             "powershell_child_process_execution": "PENDING_GITHUB_ACTIONS",
@@ -127,12 +127,12 @@ def main():
         "files": inventory,
         "unverified_until_actions_run": ["actual Windows hosted-runner behavior", "GitHub workflow run", "end-to-end run result"],
     }
-    (ROOT / "PUBLIC_RELEASE_AUDIT.json").write_text(json.dumps(audit, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "PUBLIC_RELEASE_AUDIT.json").write_bytes((json.dumps(audit, indent=2) + "\n").encode("utf-8"))
 
     def write_checksums():
         checksum_names = sorted(expected - {"SHA256SUMS.txt"})
         sums = "".join(f"{digest(ROOT / name)}  {name}\n" for name in checksum_names)
-        (ROOT / "SHA256SUMS.txt").write_text(sums, encoding="utf-8")
+        (ROOT / "SHA256SUMS.txt").write_bytes(sums.encode("utf-8"))
 
     write_checksums()
     subprocess.run([sys.executable, str(ROOT / "scripts/verify_manifest.py")], check=True)
@@ -143,7 +143,7 @@ def main():
         "sensitive_data_scan": "PASS",
         "git_history_included": False,
     }
-    (ROOT / "PUBLIC_RELEASE_AUDIT.json").write_text(json.dumps(audit, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "PUBLIC_RELEASE_AUDIT.json").write_bytes((json.dumps(audit, indent=2) + "\n").encode("utf-8"))
     write_checksums()
     subprocess.run([sys.executable, str(ROOT / "scripts/verify_manifest.py")], check=True)
     subprocess.run([sys.executable, str(ROOT / "scripts/security_scan.py")], check=True)

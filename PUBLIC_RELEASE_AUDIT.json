@@ -1,8 +1,8 @@
 {
   "audit_schema": "PUBLIC_RELEASE_AUDIT_V1",
-  "review_status": "REVIEWED_FOR_AUTHORIZED_V1_1_3_PUBLIC_RELEASE",
+  "review_status": "REVIEWED_FOR_AUTHORIZED_V1_1_4_PUBLIC_RELEASE",
   "public_release": true,
-  "package_version": "1.1.3",
+  "package_version": "1.1.4",
   "repository_history_included": false,
   "source_origin": "generic simulation content; review found no identifiable project-specific source; authoring provenance is not independently verified from the archive",
   "security_scope": {
@@ -27,7 +27,7 @@
     "any_skip": "FAIL_FOR_FULL_PASS"
   },
   "local_validation": {
-    "scanner_and_gate_regressions": "PASS: 16 targeted tests",
+    "scanner_and_gate_regressions": "PASS: 17 targeted tests",
     "full_windows_suite": "PENDING_GITHUB_ACTIONS",
     "powershell_source_parse": "PASS",
     "powershell_child_process_execution": "PENDING_GITHUB_ACTIONS",
@@ -67,7 +67,7 @@
     },
     {
       "path": "TEST_MANIFEST.json",
-      "sha256": "9d921f7c16f3ee7d1498f3750538d1d7d90995e1219ed140a735694214105975"
+      "sha256": "5cd5db6ae3681a50b96a76b8c9f2c3d5416603452faf6a66caad03a9bc204737"
     },
     {
       "path": "powershell/SimulatedService.ps1",
@@ -87,7 +87,7 @@
     },
     {
       "path": "scripts/build_audit.py",
-      "sha256": "9c611c2d8f331603b44b9d975be4e7d1e5c6fae69e328555e2ed45cef1d5bd71"
+      "sha256": "60661170eb1bee52994b4601f3db9da8e3f9e6b34b0164b63d026f739281cb1b"
     },
     {
       "path": "scripts/build_zip.py",
@@ -163,7 +163,7 @@
     },
     {
       "path": "tests/test_test_count_gate.py",
-      "sha256": "5f71d26dea1dba8b6e7a07ef9ba77837aac5cd7db48dc167ae1507ce6dc2b91b"
+      "sha256": "ea71c94c953990b512731621d7177d9c8decde385c669124a476c37141f28faf"
     }
   ],
   "unverified_until_actions_run": [
